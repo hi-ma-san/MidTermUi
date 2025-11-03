@@ -103,11 +103,16 @@ Rectangle {
     opacity: 0
     
     PropertyAnimation {
+        id: fadeAnimation
         target: fadeRect
         property: "opacity"
         from: 0
         to: 1
         duration: 1000
+    }
+    
+    Component.onCompleted: {
+        fadeAnimation.start() // 組件載入時啟動動畫
     }
 }
 ```
